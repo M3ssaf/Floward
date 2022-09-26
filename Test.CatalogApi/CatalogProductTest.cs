@@ -30,6 +30,13 @@ namespace Test.CatalogApi
             var Result = await _productBusiness.GetAllProduct();
             Assert.NotNull(Result.Result);
         }
+
+        [Fact]
+        public async void DeleteProduct()
+        {
+            var Result = await _productBusiness.DeleteProduct(9);
+            Assert.Equal(0, Result.StatusCode);
+        }
         #endregion
     }
 }
